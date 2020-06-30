@@ -29,7 +29,7 @@ Esta segunda parte foi separada pois precisamos dos serviços do zabbix e ELK fu
 ```bash
 ansible-playbook -f main-monitoring.yml
 ```
-#### zabbix 5.0(agent passive)
+#### zabbix 5.0(agent)
 
 Role onde será: instalado o agent do zabbix e configurado corrigindo o hostname no arquivo de configuração, assim como realizado a liberação na porta ssh.
 
