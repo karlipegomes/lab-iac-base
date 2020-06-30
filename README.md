@@ -46,9 +46,9 @@ Role onde será: adicionado no /etc/bashrc e no rsyslog, parâmetros para o moni
 
 ***Karlipe Gomes*** 
 
-*Github* - [@CringerLabsProject](https://github.com/cringerlabs/)
-*LinkedIn* - [@karlipegomes](https://www.linkedin.com/in/cfgomes/)
-*Website* - [cringerlabs.com](https://www.cringerlabs.com/)
+- *Github* - [@CringerLabsProject](https://github.com/cringerlabs/)
+- *LinkedIn* - [@karlipegomes](https://www.linkedin.com/in/cfgomes/)
+- *Website* - [cringerlabs.com](https://www.cringerlabs.com/)
 
 #### Version
 1.0
