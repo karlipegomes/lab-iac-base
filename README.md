@@ -15,15 +15,12 @@ Role inicial, divida em 3 partes, common, packages e services.
 ansible-playbook -f main.yml
 ```
 ##### common(ssh key)
-
 Role onde será: alterado o hostname da VM com base no inventory, desabilitado o SELinux no arquivo e em execução, adicionado o usuário ansible assim como dar as devidas permissões(FULL), alterar a porta padrão do SSH, realizar a troca de chave do usuário ansible, desabilitar o login remoto via root e por fim adicionar um banner(motd) para garantir avisos relativos ao ambiente.
 
 ##### packages(yum)
-
 Role onde será: instalado o EPEL repository, instalado uma lista de pacotes base para administração (vim, wget, tcpdump, open-vm-tools, bind-utils, net-tools, htop, screen, telnet) e por fim atualizado toda a lista de pacotes do sistema operacional.
 
 ##### services(chrony and vmware vmtools)
-
 Role onde será: instalado o chrony (NTP client) e configurado para funcionar com o server da rede e startado o serviço do vmware vmtools.
 
 #### Roles description(main-monitoring.yml file)
