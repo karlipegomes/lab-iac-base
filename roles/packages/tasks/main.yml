@@ -1,0 +1,18 @@
+---
+- name: YUM - Installing packages baselist
+  yum:
+        state: latest
+        name:
+        - vim
+        - wget
+        - tcpdump
+        - open-vm-tools
+        - bind-utils
+        - net-tools
+        - htop
+        - screen
+        - telnet
+
+- name: YUM - Server up-to-date
+  command: yum update -y
+

@@ -1,0 +1,50 @@
+---
+- name: SELinux - Disable in file
+  lineinfile:
+        dest: "/etc/selinux/config"
+        regexp: "^SELINUX="
+        line: "SELINUX=permissive"
+
+- name: SELinux - Disable in execution time
+  command: setenforce 0
+
+- name: USER - Add a new user named ansible
+  user:
+        name: ansible
+        shell: /bin/bash
+        generate_ssh_key: yes
+
+- name: USER - Add ansible user to the sudoers
+  copy:
+        dest: "/etc/sudoers.d/ansible"
+        content: "ansible  ALL=(ALL)  NOPASSWD: ALL"
+
+- name: Firewall - Open New SSH Port
+  firewalld:
+        port: 2020/tcp
+        permanent: yes
+        state: enabled
+
+- name: SSH - Deploy Key
+  authorized_key: 
+        user: ansible
+        state: present
+        key: "{{ lookup('file', 'labiac.pub') }}"
+
+- name: SSH - Changing SSH Port
+  lineinfile:
+        dest: "/etc/ssh/sshd_config"
+        regexp: "^Port"
+        line: "Port 2020"
+
+- name: SSH - Remove root Login/Restart Service
+  lineinfile:
+        dest: "/etc/ssh/sshd_config"
+        regexp: '^PermitRootLogin'
+        line: "PermitRootLogin no"
+  notify: "Restart sshd"
+
+- name: MOTD - Copy Banner 
+  copy:
+        src: motd
+        dest: /etc/motd

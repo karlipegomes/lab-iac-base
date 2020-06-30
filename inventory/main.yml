@@ -1,0 +1,37 @@
+all:
+  children:
+    zabbix:
+      hosts:
+        10.11.12.5
+    ipa:
+      hosts:
+        10.11.12.2
+    foreman:
+      hosts:
+        10.11.12.6
+    gitlab:
+      hosts:
+        10.11.12.4
+    mysql:
+      hosts:
+        10.11.12.11
+        10.11.12.12
+    swarm:
+      hosts:
+        10.11.12.21
+        10.11.12.22
+        10.11.12.23
+    kubernetes:
+      childreni:
+        k8s-master:
+          hosts:
+            10.11.12.10
+        k8s-nodes:
+            10.11.12.21
+            10.11.12.22
+            10.11.12.23
+    jenkins:
+      hosts:
+        10.11.12.101
+            
+        

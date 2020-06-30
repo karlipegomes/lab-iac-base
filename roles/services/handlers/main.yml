@@ -1,0 +1,10 @@
+---
+- name: Restart chronyd
+  service:
+    name: chronyd
+    state: restarted
+
+- name: Restart vmtoolsd
+  service:
+    name: vmtoolsd
+    state: restarted

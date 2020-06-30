@@ -1,0 +1,22 @@
+---
+- name: Chrony - Installing NTP client
+  yum:
+        name: chrony
+        state: latest
+
+- name: Chrony - Copy config file
+  copy:
+        src: chrony.conf
+        dest: /etc/chrony.conf
+
+- name: Chrony - Enabling on boot/Restart
+  service:
+        name: chronyd
+        enabled: yes
+  notify: "Restart chrony"
+           
+- name: VMtools - Enabling on boot/Restart
+  service:
+        name: vmtoolsd
+        enabled: yes
+  notify: "Restart vmtoolsd"
