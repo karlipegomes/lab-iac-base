@@ -1,0 +1,9 @@
+---
+- name: Apply common configuration to all nodes
+  hosts: all
+  gather_facts: yes
+  #ignore_errors: yes
+
+  roles:
+    - { role: syslog }
+    - { role: zabbix }

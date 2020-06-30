@@ -1,4 +1,10 @@
 ---
+- name: YUM - Install EPEL Repo
+  yum:
+        state: latest
+        name:
+        - epel-release
+
 - name: YUM - Installing packages baselist
   yum:
         state: latest
@@ -14,5 +20,6 @@
         - telnet
 
 - name: YUM - Server up-to-date
-  command: yum update -y
-
+  yum: 
+        state: latest
+        name: "*"

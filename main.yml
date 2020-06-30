@@ -1,7 +1,10 @@
 ---
-- name: apply common configuration to all nodes
-  hosts: zabbix
-  #gather_facts: no
+- name: Apply common configuration to all nodes
+  hosts: all
+  gather_facts: no
+  ignore_errors: yes
 
   roles:
-    - { role: commons }
+ #   - { role: common }
+ #   - { role: packages }
+    - { role: services }

@@ -1,0 +1,20 @@
+---   
+- name: Zabbix - Installing
+  yum:
+        name: zabbix-agent
+        state: latest
+
+- name: Zabbix - Copy config file
+  copy:
+        src: zabbix_agentd.conf
+        dest: /etc/zabbix/zabbix_agentd.conf
+
+- name: Zabbix - Change server
+  command: sed -i 's/^Hostname=/Hostname={{ ansible_hostname }}/g' /etc/zabbix/zabbix_agentd.conf
+
+- name: Zabbix - Enabling on boot/Restart
+  service:
+        name: zabbix-agent
+        enabled: yes
+  notify: 
+    - Restart zabbix-agent

@@ -1,0 +1,13 @@
+---
+- name: BASHRC - Copy bashrc file
+  copy:
+   src: bashrc
+   dest: /etc/bashrc
+
+- name: SYSLOG - Adding bash commands rsyslog
+  copy:
+   src: bash.conf
+   dest: /etc/rsyslog.d/bash.conf
+  notify:
+  - Restart rsyslog
+

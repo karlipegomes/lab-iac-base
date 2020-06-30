@@ -2,36 +2,44 @@ all:
   children:
     zabbix:
       hosts:
-        10.11.12.5
+        zbx.cringerlabs.local:
     ipa:
       hosts:
-        10.11.12.2
+        ipa.cringerlabs.local:
     foreman:
       hosts:
-        10.11.12.6
+        foreman.cringerlabs.local:
+    tower:
+      hosts:
+        tower.cringerlabs.local:
     gitlab:
       hosts:
-        10.11.12.4
+        gitlab.cringerlabs.local:
     mysql:
-      hosts:
-        10.11.12.11
-        10.11.12.12
+      children:
+        proxy:
+          hosts:
+            haprx.cringerlabs.local:
+        databases:
+          hosts:
+            mysql01.cringerlabs.local:
+            mysql02.cringerlabs.local:
     swarm:
       hosts:
-        10.11.12.21
-        10.11.12.22
-        10.11.12.23
+        docker01.cringerlabs.local:
+        docker02.cringerlabs.local:
+        docker03.cringerlabs.local:
     kubernetes:
-      childreni:
-        k8s-master:
+      children:
+        k8smaster:
           hosts:
-            10.11.12.10
-        k8s-nodes:
-            10.11.12.21
-            10.11.12.22
-            10.11.12.23
+            k8s-01.cringerlabs.local:
+        k8snodes:
+          hosts:
+            k8s-01.cringerlabs.local:
+            k8s-02.cringerlabs.local:
+            k8s-03.cringerlabs.local:
     jenkins:
       hosts:
-        10.11.12.101
-            
+        jenkins.cringerlabs.local:
         
