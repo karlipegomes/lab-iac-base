@@ -5,6 +5,6 @@
   ignore_errors: yes
 
   roles:
- #   - { role: common }
- #   - { role: packages }
+    - { role: common }
+    - { role: packages }
     - { role: services }

@@ -17,7 +17,6 @@
         - net-tools
         - htop
         - screen
-        - telnet
 
 - name: YUM - Server up-to-date
   yum: 

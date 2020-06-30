@@ -12,6 +12,17 @@
 - name: Zabbix - Change server
   command: sed -i 's/^Hostname=/Hostname={{ ansible_hostname }}/g' /etc/zabbix/zabbix_agentd.conf
 
+- name: Firewall - Open Port 10051/TCP
+  firewalld:
+    port: 10051/tcp
+    permanent: yes
+    state: enabled
+
+- name: Firewall - Reload service
+  systemd:
+    name: firewalld
+    state: reloaded
+
 - name: Zabbix - Enabling on boot/Restart
   service:
         name: zabbix-agent
