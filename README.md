@@ -20,10 +20,10 @@ ansible-playbook -f main-monitoring.yml
 #### main(install epel-repo and various packages, vim, wget, tcpdump, open-vm-tools, bind-utils, net-tools, htop, screen, telnet and update all packages on SO);
 #### common (disable selinux, add new user called ansible and create private key, allow on sudoers, update SSH port to 2020 and enable on firewalld);
 
-## Version
+### Version
 
 1.0
 
-## Autor
+### Autor
 
 ***Karlipe*** - *Github* - https://github.com/cringerlabs/
