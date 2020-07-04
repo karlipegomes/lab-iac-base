@@ -9,6 +9,9 @@ all:
     foreman:
       hosts:
         foreman.cringerlabs.local:
+    elk:
+      hosts:
+        elk.cringerlabs.local:
     tower:
       hosts:
         tower.cringerlabs.local:

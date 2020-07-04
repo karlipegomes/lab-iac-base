@@ -1,6 +1,6 @@
 ---
 - name: Apply common configuration to all nodes
-  hosts: all
+  hosts: tower
   gather_facts: no
   ignore_errors: yes
 
@@ -8,3 +8,4 @@
     - { role: common }
     - { role: packages }
     - { role: services }
+   

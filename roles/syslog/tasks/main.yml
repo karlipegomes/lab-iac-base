@@ -1,8 +1,11 @@
 ---
-- name: BASHRC - Copy bashrc file
-  copy:
-   src: bashrc
-   dest: /etc/bashrc
+- name: BASHRC - Adding Logging bashrc file
+  blockinfile:
+    path: /etc/bashrc
+    block: |
+      #
+      # Adicionando comandos no rsyslogd
+      export PROMPT_COMMAND='history -a >(tee -a ~/.bash_history | logger -p local6.debug -t "$USER[$$] $SSH_CONNECTION")'
 
 - name: SYSLOG - Adding bash commands rsyslog
   copy:

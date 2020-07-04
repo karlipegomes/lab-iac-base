@@ -1,31 +1,24 @@
 ---   
 - name: Zabbix - Installing
   yum:
-        name: zabbix-agent
-        state: latest
+    name: zabbix-agent
+    state: latest
 
-- name: Zabbix - Copy config file
-  copy:
-        src: zabbix_agentd.conf
-        dest: /etc/zabbix/zabbix_agentd.conf
-
-- name: Zabbix - Change server
-  command: sed -i 's/^Hostname=/Hostname={{ ansible_hostname }}/g' /etc/zabbix/zabbix_agentd.conf
+- name: Zabbix - Copy zabbix config file
+  template: 
+    src: zabbix_agentd.conf
+    dest: /etc/zabbix/zabbix_agentd.conf
 
 - name: Firewall - Open Port 10051/TCP
   firewalld:
     port: 10051/tcp
     permanent: yes
+    immediate: yes 
     state: enabled
-
-- name: Firewall - Reload service
-  systemd:
-    name: firewalld
-    state: reloaded
 
 - name: Zabbix - Enabling on boot/Restart
   service:
-        name: zabbix-agent
-        enabled: yes
+    name: zabbix-agent
+    enabled: yes
   notify: 
     - Restart zabbix-agent
