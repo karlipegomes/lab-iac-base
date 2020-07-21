@@ -27,6 +27,9 @@ all:
           hosts:
             mysql01.cringerlabs.local:
             mysql02.cringerlabs.local:
+    bucket:
+      hosts:
+        bucket.cringerlabs.local:
     swarm:
       hosts:
         docker01.cringerlabs.local:
