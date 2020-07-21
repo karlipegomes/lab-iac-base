@@ -13,7 +13,7 @@
   service:
         name: chronyd
         enabled: yes
-  notify: "Restart chrony"
+  notify: "Restart chronyd"
            
 - name: VMtools - Enabling on boot/Restart
   service:

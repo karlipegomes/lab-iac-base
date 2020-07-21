@@ -1,5 +1,10 @@
 ---   
-- name: Zabbix - Installing
+- name: Install Repo Zabbix 5.0
+  yum:
+    name: https://repo.zabbix.com/zabbix/5.0/rhel/7/x86_64/zabbix-release-5.0-1.el7.noarch.rpm
+    state: present
+
+- name: Zabbix - Installing Agent
   yum:
     name: zabbix-agent
     state: latest
@@ -21,4 +26,4 @@
     name: zabbix-agent
     enabled: yes
   notify: 
-    - Restart zabbix-agent
+    - "Restart zabbix-agent"

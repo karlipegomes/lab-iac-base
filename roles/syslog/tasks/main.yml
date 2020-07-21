@@ -12,5 +12,5 @@
    src: bash.conf
    dest: /etc/rsyslog.d/bash.conf
   notify:
-  - Restart rsyslog
+  - "Restart rsyslog"
 

@@ -1,6 +1,6 @@
 ---
 - name: Apply common configuration to all nodes
-  hosts: tower
+  hosts: elk
   gather_facts: no
   ignore_errors: yes
 
