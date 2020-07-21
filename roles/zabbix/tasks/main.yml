@@ -14,9 +14,9 @@
     src: zabbix_agentd.conf
     dest: /etc/zabbix/zabbix_agentd.conf
 
-- name: Firewall - Open Port 10051/TCP
+- name: Firewall - Open Port 10050/TCP
   firewalld:
-    port: 10051/tcp
+    port: 10050/tcp
     permanent: yes
     immediate: yes 
     state: enabled
