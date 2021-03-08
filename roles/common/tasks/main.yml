@@ -9,7 +9,9 @@
     line: "SELINUX=permissive"
 
 - name: SELinux - Disable in execution time
-  command: setenforce 0
+  selinux: 
+    policy: targeted
+    state: permissive
 
 - name: USER - Add a new user named ansible
   user:
