@@ -1,0 +1,10 @@
+site_name: "CringerLabs IAC Base"
+site_description: "Base project that standardizes the minimal machine setup: packages and initial configuration"
+repo_url: https://github.com/karlipegomes/lab-iac-base
+edit_uri: edit/master/docs/
+
+nav:
+  - "Home": index.md
+
+plugins:
+  - techdocs-core

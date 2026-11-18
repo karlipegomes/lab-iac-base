@@ -8,6 +8,8 @@ metadata:
   description: "lab-iac-base (karlipegomes)"
   annotations:
     github.com/project-slug: karlipegomes/lab-iac-base
+    backstage.io/techdocs-ref: dir:.
+  tags: [ansible, linux]
   links:
     - url: https://github.com/karlipegomes/lab-iac-base
       title: Repository
@@ -24,6 +26,8 @@ metadata:
   description: "lab-iac-base (karlipegomes)"
   annotations:
     github.com/project-slug: karlipegomes/lab-iac-base
+    backstage.io/techdocs-ref: dir:.
+  tags: [ansible]
 spec:
   type: infrastructure
   lifecycle: deprecated
