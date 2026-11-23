@@ -15,7 +15,7 @@ metadata:
       title: Repository
       icon: github
 spec:
-  owner: user:karlipegomes
+  owner: group:karlipegomes
   domain: karlipegomes
 ---
 apiVersion: backstage.io/v1alpha1
@@ -31,5 +31,5 @@ metadata:
 spec:
   type: infrastructure
   lifecycle: deprecated
-  owner: user:karlipegomes
+  owner: group:karlipegomes
   system: lab-iac-base
